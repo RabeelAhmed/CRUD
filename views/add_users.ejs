@@ -1,0 +1,47 @@
+<%- include('layout/header') %>
+
+<div class="container" style="background-color: #f4f4f9; font-family: 'Verdana', sans-serif;">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto mt-4">
+                    <div class="card shadow" style="border-radius: 10px;">
+                        <div class="card-header" style="background-color: #5a67d8; color: #ffffff;">
+                            <h5 class="text-light">Add New User</h5>
+                        </div>
+                        <div class="card-body p-4" style="background-color: #ffffff;">
+                            <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="name" style="color: #333333; font-weight: bold;">Name</label>
+                                    <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter Name" required
+                                        style="border: 2px solid #5a67d8; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" style="color: #333333; font-weight: bold;">Email</label>
+                                    <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter Email" required
+                                        style="border: 2px solid #5a67d8; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" style="color: #333333; font-weight: bold;">Phone</label>
+                                    <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter Phone" required
+                                        style="border: 2px solid #5a67d8; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label" style="color: #333333; font-weight: bold;">Select Image</label>
+                                    <input type="file" name="image" class="form-control form-control-lg" required
+                                        style="border: 2px solid #5a67d8; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit" name="submit" value="Add User" class="btn btn-lg" 
+                                        style="background-color: #48bb78; color: #ffffff; width: 100%; border-radius: 5px;"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

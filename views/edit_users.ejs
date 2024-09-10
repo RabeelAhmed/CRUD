@@ -1,0 +1,48 @@
+<%- include('layout/header') %>
+
+<div class="container" style="background-color: #f4f9fc; font-family: 'Verdana', sans-serif;">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto mt-4">
+                    <div class="card shadow" style="border-radius: 10px;">
+                        <div class="card-header" style="background-color: #2dce89; color: #ffffff;">
+                            <h5 class="text-light">Edit User (<%= user.name %>)</h5>
+                        </div>
+                        <div class="card-body p-4" style="background-color: #ffffff;">
+                            <form action="/update/<%= user._id %>" method="post" id="add-form" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="name" style="color: #333333; font-weight: bold;">Name</label>
+                                    <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter Name" value="<%= user.name %>" required
+                                        style="border: 2px solid #2dce89; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" style="color: #333333; font-weight: bold;">Email</label>
+                                    <input type="email" value="<%= user.email %>" name="email" class="form-control form-control-lg" placeholder="Enter Email" required
+                                        style="border: 2px solid #2dce89; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" style="color: #333333; font-weight: bold;">Phone</label>
+                                    <input type="tel" value="<%= user.phone %>" name="phone" class="form-control form-control-lg" placeholder="Enter Phone" required
+                                        style="border: 2px solid #2dce89; border-radius: 5px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label" style="color: #333333; font-weight: bold;">Select Image</label>
+                                    <input type="file" name="image" class="form-control form-control-lg" style="border: 2px solid #2dce89; border-radius: 5px;"/>
+                                    <img src="/<%= user.image %>" width="100" class="img-thumbnail mt-1" alt="User Image">
+                                    <input type="hidden" name="old_image" value="<%= user.image %>"/>
+                                </div>
+                                <div class="mb-3 d-grid">
+                                    <input type="submit" name="submit" value="Update User" class="btn btn-lg" 
+                                        style="background-color: #2dce89; color: #ffffff; width: 100%; border-radius: 5px;"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>
